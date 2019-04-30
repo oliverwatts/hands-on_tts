@@ -79,7 +79,8 @@ What other effects can you produce by manipulating this stream?
 
 ### Manipulation of other streams
 
-What effects can you produce by manipulating the other streams?
+What effects can you produce by manipulating the other streams? E.g., 
+what happens when you corrupt certain frequency bands?
 
 Let's slow the audio by repeating frames:
 
@@ -100,6 +101,44 @@ ap_quick = np.ascontiguousarray(sp[::2,:])
 y = pyworld.synthesize(f0_quick, sp_quick, ap_quick, samplerate)
 soundfile.write('/tmp/resynth_01.wav', y, samplerate)
 ```
+
+
+### Format features for modelling
+
+Analysis:
+
+```
+from world_features import *
+
+nmelceps = 60
+
+f0, sp, ap, sr = extract_world_features('./data/hvd_181.wav')
+
+melcep = sp2mgc(sp, nmelceps, sr)
+bap = ap2coarse(ap, sr)
+
+interp_f0, vuv = interpolate_through_unvoiced(f0)
+log_f0 = np.log(interp_f0)
+```
+
+Synthesis:
+
+```
+f0_2 = np.exp(log_f0)
+f0_2[vuv<0.5] = 0.0
+f0_2 = f0_2.flatten()
+
+ap2 = coarse2ap(bap, sr, get_world_fftlen(sr))
+sp2 = mgc2sp(melcep, sr)
+
+sp2 = np.ascontiguousarray(sp2)
+ap2 = np.ascontiguousarray(ap2)
+y = pyworld.synthesize(f0_2, sp2, ap2, sr, 5)
+soundfile.write('/tmp/b.wav', y, sr)
+```
+
+Things to try: vary number of cepstral coefficients used -- what is the effect?
+What happens when you corrupt certain cepstral coefficients?
 
 
 
