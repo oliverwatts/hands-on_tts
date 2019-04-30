@@ -130,7 +130,7 @@ soundfile.write('/tmp/sine.wav', get_sine(1800, 5, sr)*ramp + get_sine(2000, 5, 
 Read the audio contained in this file to a Numpy array:
 
 ```
-wave, samplerate = read('./data/hvd_181.wav')
+wave, samplerate = soundfile.read('./data/hvd_181.wav')
 
 ```
 
