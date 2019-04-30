@@ -70,7 +70,7 @@ sample_rate_hz = 16000
 duration_seconds = 1
 
 x_in_radians = np.linspace(0, 2*np.pi * sine_hz * duration_seconds, sample_rate_hz*duration_seconds) 
-x_in_seconds = np.linspace(0, length_in_seconds, sample_rate_hz*duration_seconds)
+x_in_seconds = np.linspace(0, duration_seconds, sample_rate_hz*duration_seconds)
 y = np.sin(x_in_radians)
 plt.plot(x_in_seconds, y) 
 plt.show()    
