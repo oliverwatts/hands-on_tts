@@ -18,7 +18,7 @@ import pysptk
 #import librosa
 
 # import pylab
-# import scipy
+import scipy
 
 from numpy import convolve
 # import matplotlib.pyplot as plt
@@ -70,7 +70,7 @@ def get_world_freq_axis(sr, fft_size=1024):
 
 def get_world_coarse_freq_axis(sr):
     kFrequencyInterval = 3000 ## const
-    number_of_aperiodicities = {16000: 1, 44100:5}[sr]
+    number_of_aperiodicities = {16000: 1, 44100:5, 48000:5}[sr]
     coarse_frequency_axis = []
     for i in range(number_of_aperiodicities+1):
         coarse_frequency_axis.append( i * kFrequencyInterval )
