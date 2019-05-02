@@ -1,5 +1,11 @@
 ## Icelandic TTS resources
 
+Please feel free to add to the Google doc here:
+
+```
+https://docs.google.com/document/d/1j1YhhF8_gxOPKcgjoqHHBmhzGXkZNfkgYvwqqXP3wSY/edit?usp=sharing
+```
+
 ### Tools
 
 Trained Ossian voices -- https://github.com/cadia-lvl/Ossian
