@@ -70,7 +70,7 @@ sample_rate_hz = 16000
 duration_seconds = 1
 
 x_in_radians = np.linspace(0, 2*np.pi * sine_hz * duration_seconds, sample_rate_hz*duration_seconds) 
-x_in_seconds = np.linspace(0, length_in_seconds, sample_rate_hz*duration_seconds)
+x_in_seconds = np.linspace(0, duration_seconds, sample_rate_hz*duration_seconds)
 y = np.sin(x_in_radians)
 plt.plot(x_in_seconds, y) 
 plt.show()    
@@ -130,7 +130,7 @@ soundfile.write('/tmp/sine.wav', get_sine(1800, 5, sr)*ramp + get_sine(2000, 5, 
 Read the audio contained in this file to a Numpy array:
 
 ```
-wave, samplerate = read('./data/hvd_181.wav')
+wave, samplerate = soundfile.read('./data/hvd_181.wav')
 
 ```
 
