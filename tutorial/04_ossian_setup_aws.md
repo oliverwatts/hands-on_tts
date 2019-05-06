@@ -19,6 +19,15 @@ ssh into machine:
 
 
 
+
+Start a screen session:
+
+```
+screen
+```
+
+Screen reference [here](http://aperiodic.net/screen/quick_reference)
+
 Set up tools:
 
 ```
