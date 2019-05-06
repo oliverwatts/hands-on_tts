@@ -219,3 +219,18 @@ p p p p p p p p p p p p p p p p p p p p p p p p p p p p p
 ubuntu@ip-172-31-24-151:~/Ossian$
 ```
 
+Train acoustic and duration models as explained in the notes printed out above.
+
+Synthesise:
+
+```
+mkdir $OSSIAN/test/wav/
+
+python ./scripts/speak.py -l rm -s rss_toy_demo -o ./test/wav/romanian_toy_HTS.wav naive_01_nn ./test/txt/romanian.txt
+
+```
+
+Copy generated waveform back to local machine with scp:
+```
+scp -i ~/Desktop/aws_test_2.pem.txt ubuntu@ec2-18-130-168-119.eu-west-2.compute.amazonaws.com:/home/ubuntu/Ossian/voices//rm/rss_toy_demo/naive_01_nn/output/wav/temp.wav ~/Desktop/
+```
