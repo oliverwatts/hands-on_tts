@@ -57,7 +57,11 @@ pip install argparse --user
 pip install bandmat  --user
 pip install theano --user
 pip install matplotlib --user
-pip install regex --user        ### !!!!!
+pip install regex --user       
+
+pip install soundfile --user   ### !!!!!
+pip install librosa --user   ### !!!!!
+
 
 git clone -b rvk2019 https://github.com/CSTR-Edinburgh/Ossian.git
 cd Ossian
