@@ -143,8 +143,8 @@ FRAME_BUFFER_SIZE = 100000
 Train the duration and acoustic processors with merlin
 
 ```
-export dur_config=‘./train/is/speakers/<speaker>/lvl_lex_01_nn/processors/duration_predictor/config.cfg’
-export ac_config=‘./train/is/speakers/<speaker>/lvl_lex_01_nn/processors/acoustic_predictor/config.cfg’
+export dur_config=./train/is/speakers/<speaker>/lvl_lex_01_nn/processors/duration_predictor/config.cfg
+export ac_config=./train/is/speakers/<speaker>/lvl_lex_01_nn/processors/acoustic_predictor/config.cfg
 python ./tools/merlin/src/run_keras_with_merlin_io.py $dur_config
 python ./tools/merlin/src/run_keras_with_merlin_io.py $ac_config
 ```
