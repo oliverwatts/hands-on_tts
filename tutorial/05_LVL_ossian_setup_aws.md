@@ -36,20 +36,20 @@ Set up tools:
 ```
 sudo apt-get update
 
-sudo apt-get install unzip # 
-sudo apt-get install sox
+sudo apt-get install unzip  --yes # 
+sudo apt-get install sox  --yes
 ```
 
 Alexander's improved LVL version has fixed most of the code to use Python 3, although there are a couple of exceptions: the g2p package used for handling out-of-vocabulary words is deeply integrated with 2.7 and difficult to convert (also there is a script used in alignment make_proto_hsmm.py which still uses Python 2). Normally I'd use virtual environments for handling these 2 versions, but won't bother with this when working on a virtual machine:
 
 
 ```
-sudo apt-get install python2.7
+sudo apt-get install python2.7  --yes
 ## python3.5 already installed on AMI
 
 #sudo apt install python2.7-dev
-sudo apt install python3.5-dev
-sudo apt-get install build-essential autoconf libtool pkg-config python-opengl  python-pyrex 
+sudo apt install python3.5-dev  --yes
+sudo apt-get install build-essential autoconf libtool pkg-config python-opengl  python-pyrex  --yes
 
 curl -O https://bootstrap.pypa.io/get-pip.py
 python2.7 get-pip.py --user
@@ -102,7 +102,7 @@ cd Ossian
 Installation of g2p  must be done with python 2 
 
 ```
-sudo apt-get install swig
+sudo apt-get install swig --yes
 alias python=python2.7
 ./scripts/setup_g2p.sh
 alias python=python3.5
