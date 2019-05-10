@@ -184,9 +184,9 @@ python ./tools/merlin/src/run_keras_with_merlin_io.py $ac_config
 
 
 ```
-cp -r  train/is/speakers/HHj_123/lvl_lex_01_nn/processors/acoustic_predictor/* voices/is/HHj_123/lvl_lex_01_nn/processors/acoustic_predictor/
+cp -r  train/is/speakers/<speaker>/lvl_lex_01_nn/processors/acoustic_predictor/* voices/is/HHj_123/lvl_lex_01_nn/processors/acoustic_predictor/
 
-cp -r  train/is/speakers/HHj_123/lvl_lex_01_nn/processors/duration_predictor/* voices/is/HHj_123/lvl_lex_01_nn/processors/duration_predictor
+cp -r  train/is/speakers/<speaker>/lvl_lex_01_nn/processors/duration_predictor/* voices/is/HHj_123/lvl_lex_01_nn/processors/duration_predictor
 
 ```
 
