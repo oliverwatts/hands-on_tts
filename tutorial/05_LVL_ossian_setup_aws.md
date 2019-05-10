@@ -131,6 +131,15 @@ Adjust the duration and acoustic config files to your liking:
 ./train/is/speakers/<speaker>/lvl_lex_01_nn/processors/acoustic_predictor/config.cfg
 ```
 
+You may have to adjust FRAME_BUFFER_SIZE in ./tools/merlin/src/keras_lib/data_utils.py to fit your available memory
+
+On the t2.micro I needed to edit `./tools/merlin/src/keras_lib/data_utils.py` in order not to exhaust memory, defining FRAME_BUFFER_SIZE like this:
+
+```
+FRAME_BUFFER_SIZE = 100000
+```
+
+
 Train the duration and acoustic processors with merlin
 
 ```
@@ -141,13 +150,6 @@ python ./tools/merlin/src/run_keras_with_merlin_io.py $ac_config
 ```
 
 
-Note: May have to adjust FRAME_BUFFER_SIZE in ./tools/merlin/src/keras_lib/data_utils.py to fit your available memory
-
-On the t2.micro I needed to edit `./tools/merlin/src/keras_lib/data_utils.py` in order not to exhaust memory, defining FRAME_BUFFER_SIZE like this:
-
-```
-FRAME_BUFFER_SIZE = 100000
-```
 
 Tensorboard can be used to view plots of training error
 ```
